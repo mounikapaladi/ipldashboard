@@ -1,7 +1,5 @@
-// Write your code here
-import {Link} from 'react-router-dom'
-
 import './index.css'
+import {Link} from 'react-router-dom'
 
 const TeamCard = props => {
   const {teamDetails} = props
@@ -16,4 +14,5 @@ const TeamCard = props => {
     </li>
   )
 }
+
 export default TeamCard

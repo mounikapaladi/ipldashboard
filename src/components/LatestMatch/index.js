@@ -1,4 +1,3 @@
-// Write your code here
 import './index.css'
 
 const LatestMatch = props => {
@@ -17,7 +16,7 @@ const LatestMatch = props => {
 
   return (
     <div className="latest-match-container">
-      <h1 className="latest-match-heading">Latest matches</h1>
+      <h1 className="latest-match-heading">Latest Matches</h1>
       <div className="latest-match-card">
         <div className="latest-match-details-logo-container">
           <div className="latest-match-details-1">
@@ -29,7 +28,7 @@ const LatestMatch = props => {
           <img
             src={competingTeamLogo}
             className="latest-match-team-logo"
-            alt={`latest-match ${competingTeam}`}
+            alt={`latest match ${competingTeam}`}
           />
         </div>
         <hr className="separator" />
@@ -41,7 +40,7 @@ const LatestMatch = props => {
           <p className="latest-match-details-label">Man Of The Match</p>
           <p className="latest-match-details-value">{manOfTheMatch}</p>
           <p className="latest-match-details-label">Umpires</p>
-          <p className="latest-match-details-label">{umpires}</p>
+          <p className="latest-match-details-value">{umpires}</p>
         </div>
       </div>
     </div>

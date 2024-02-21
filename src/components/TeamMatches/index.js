@@ -1,6 +1,4 @@
-// Write your code here
 import {Component} from 'react'
-
 import Loader from 'react-loader-spinner'
 
 import LatestMatch from '../LatestMatch'
@@ -25,6 +23,7 @@ class TeamMatches extends Component {
     result: data.result,
     manOfTheMatch: data.man_of_the_match,
     id: data.id,
+    date: data.date,
     venue: data.venue,
     competingTeam: data.competing_team,
     competingTeamLogo: data.competing_team_logo,
@@ -56,7 +55,7 @@ class TeamMatches extends Component {
     const {recentMatches} = teamMatchesData
 
     return (
-      <ul className="react-matches-list">
+      <ul className="recent-matches-list">
         {recentMatches.map(recentMatch => (
           <MatchCard matchDetails={recentMatch} key={recentMatch.id} />
         ))}
@@ -78,7 +77,7 @@ class TeamMatches extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader" className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
@@ -101,7 +100,7 @@ class TeamMatches extends Component {
         return 'rr'
       case 'MI':
         return 'mi'
-      case 'SRH':
+      case 'SH':
         return 'srh'
       case 'DC':
         return 'dc'

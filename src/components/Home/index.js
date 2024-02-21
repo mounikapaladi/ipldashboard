@@ -1,11 +1,12 @@
 // Write your code here
 import {Component} from 'react'
-
 import Loader from 'react-loader-spinner'
 
 import TeamCard from '../TeamCard'
 
-const teamApiUrl = 'https://apis.ccbp.in/ipl'
+import './index.css'
+
+const teamsApiUrl = 'https://apis.ccbp.in/ipl'
 
 class Home extends Component {
   state = {
@@ -18,14 +19,13 @@ class Home extends Component {
   }
 
   getTeams = async () => {
-    const response = await fetch(teamApiUrl)
+    const response = await fetch(teamsApiUrl)
     const fetchedData = await response.json()
     const formattedData = fetchedData.teams.map(team => ({
       name: team.name,
       id: team.id,
       teamImageURL: team.team_image_url,
     }))
-
     this.setState({
       teamsData: formattedData,
       isLoading: false,
@@ -37,15 +37,15 @@ class Home extends Component {
 
     return (
       <ul className="teams-list">
-        {teamsData.map(team => (
-          <TeamCard teamDetails={team} key={team.id} />
+        {teamsData.map(teamDetails => (
+          <TeamCard teamDetails={teamDetails} key={teamDetails.id} />
         ))}
       </ul>
     )
   }
 
   renderLoader = () => (
-    <div testid="loader" className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <Loader type="Oval" color="#ffffff" height={50} />
     </div>
   )
